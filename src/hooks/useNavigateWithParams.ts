@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { useCallback } from "react";
+import { useCallback, useMemo } from "react";
 
 export function useNavigateWithParams() {
     const router = useRouter();
@@ -31,5 +31,5 @@ export function useNavigateWithParams() {
         router.back();
     }, [router]);
 
-    return { push, replace, back };
+    return useMemo(() => ({ push, replace, back }), [push, replace, back]);
 }
