@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { useNavigateWithParams } from "@/hooks/useNavigateWithParams";
 import { Check } from "lucide-react";

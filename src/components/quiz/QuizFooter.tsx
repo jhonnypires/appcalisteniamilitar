@@ -1,3 +1,5 @@
+"use client";
+
 import { useRouter } from "next/navigation";
 
 interface QuizFooterProps {
@@ -33,10 +35,10 @@ export default function QuizFooter({ currentStep, totalSteps = 24, onBack }: Qui
                     <div
                         key={i}
                         className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${i + 1 === currentStep
-                                ? "bg-[#4ade80] scale-125"
-                                : i + 1 < currentStep
-                                    ? "bg-[#4ade80]/40"
-                                    : "bg-white/10"
+                            ? "bg-[#4ade80] scale-125"
+                            : i + 1 < currentStep
+                                ? "bg-[#4ade80]/40"
+                                : "bg-white/10"
                             }`}
                     />
                 ))}
