@@ -1,39 +1,31 @@
-import dynamic from 'next/dynamic';
+import nextDynamic from 'next/dynamic';
 
-const QuizStep1 = dynamic(() => import('@/components/quiz/QuizStep1'));
-const QuizStep2 = dynamic(() => import('@/components/quiz/QuizStep2'));
-const QuizStep3 = dynamic(() => import('@/components/quiz/QuizStep3'));
-const QuizStep4 = dynamic(() => import('@/components/quiz/QuizStep4'));
-const QuizStep5 = dynamic(() => import('@/components/quiz/QuizStep5'));
-const QuizStep6 = dynamic(() => import('@/components/quiz/QuizStep6'));
-const QuizStep7 = dynamic(() => import('@/components/quiz/QuizStep7'));
-const QuizStep8 = dynamic(() => import('@/components/quiz/QuizStep8'));
-const QuizStep9 = dynamic(() => import('@/components/quiz/QuizStep9'));
-const QuizStep10 = dynamic(() => import('@/components/quiz/QuizStep10'));
-const QuizStep11 = dynamic(() => import('@/components/quiz/QuizStep11'));
-const QuizStep12 = dynamic(() => import('@/components/quiz/QuizStep12'));
-const QuizStep13 = dynamic(() => import('@/components/quiz/QuizStep13'));
-const QuizStep14 = dynamic(() => import('@/components/quiz/QuizStep14'));
-const QuizStep15 = dynamic(() => import('@/components/quiz/QuizStep15'));
-const QuizStep16 = dynamic(() => import('@/components/quiz/QuizStep16'));
-const QuizStep17 = dynamic(() => import('@/components/quiz/QuizStep17'));
-const QuizStep18 = dynamic(() => import('@/components/quiz/QuizStep18'));
-const QuizStep19 = dynamic(() => import('@/components/quiz/QuizStep19'));
-const QuizStep20 = dynamic(() => import('@/components/quiz/QuizStep20'));
-const QuizStep21 = dynamic(() => import('@/components/quiz/QuizStep21'));
-const QuizStep22 = dynamic(() => import('@/components/quiz/QuizStep22'));
-const QuizStep23 = dynamic(() => import('@/components/quiz/QuizStep23'));
-const QuizLoading = dynamic(() => import('@/components/quiz/QuizLoading'));
+const QuizStep1 = nextDynamic(() => import('@/components/quiz/QuizStep1'));
+const QuizStep2 = nextDynamic(() => import('@/components/quiz/QuizStep2'));
+const QuizStep3 = nextDynamic(() => import('@/components/quiz/QuizStep3'));
+const QuizStep4 = nextDynamic(() => import('@/components/quiz/QuizStep4'));
+const QuizStep5 = nextDynamic(() => import('@/components/quiz/QuizStep5'));
+const QuizStep6 = nextDynamic(() => import('@/components/quiz/QuizStep6'));
+const QuizStep7 = nextDynamic(() => import('@/components/quiz/QuizStep7'));
+const QuizStep8 = nextDynamic(() => import('@/components/quiz/QuizStep8'));
+const QuizStep9 = nextDynamic(() => import('@/components/quiz/QuizStep9'));
+const QuizStep10 = nextDynamic(() => import('@/components/quiz/QuizStep10'));
+const QuizStep11 = nextDynamic(() => import('@/components/quiz/QuizStep11'));
+const QuizStep12 = nextDynamic(() => import('@/components/quiz/QuizStep12'));
+const QuizStep13 = nextDynamic(() => import('@/components/quiz/QuizStep13'));
+const QuizStep14 = nextDynamic(() => import('@/components/quiz/QuizStep14'));
+const QuizStep15 = nextDynamic(() => import('@/components/quiz/QuizStep15'));
+const QuizStep16 = nextDynamic(() => import('@/components/quiz/QuizStep16'));
+const QuizStep17 = nextDynamic(() => import('@/components/quiz/QuizStep17'));
+const QuizStep18 = nextDynamic(() => import('@/components/quiz/QuizStep18'));
+const QuizStep19 = nextDynamic(() => import('@/components/quiz/QuizStep19'));
+const QuizStep20 = nextDynamic(() => import('@/components/quiz/QuizStep20'));
+const QuizStep21 = nextDynamic(() => import('@/components/quiz/QuizStep21'));
+const QuizStep22 = nextDynamic(() => import('@/components/quiz/QuizStep22'));
+const QuizStep23 = nextDynamic(() => import('@/components/quiz/QuizStep23'));
+const QuizLoading = nextDynamic(() => import('@/components/quiz/QuizLoading'));
 
-export function generateStaticParams() {
-    return [
-        { id: "1" }, { id: "2" }, { id: "3" }, { id: "4" }, { id: "5" },
-        { id: "6" }, { id: "7" }, { id: "8" }, { id: "9" }, { id: "10" },
-        { id: "11" }, { id: "12" }, { id: "13" }, { id: "14" }, { id: "15" },
-        { id: "16" }, { id: "17" }, { id: "18" }, { id: "19" }, { id: "20" },
-        { id: "21" }, { id: "22" }, { id: "23" }, { id: "24" }
-    ];
-}
+export const dynamic = "force-dynamic";
 
 export default async function QuizPage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params;
