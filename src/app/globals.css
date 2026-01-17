@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0f110f;
+  --color-foreground: #e5e7eb;
+  --color-primary: #5c7a5c; /* Muted military green base */
+  --color-primary-foreground: #ffffff;
+  --color-accent: #4ade80; /* Neon green for active states */
+  --color-card: #1a1c1a;
+  
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  --background: #0f110f;
+  --foreground: #e5e7eb;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+  min-height: 100vh;
+}
+
+/* Custom Utilities for Neon Effects */
+.text-neon {
+  text-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+}
+
+.border-neon {
+  box-shadow: 0 0 15px rgba(74, 222, 128, 0.2);
+}
