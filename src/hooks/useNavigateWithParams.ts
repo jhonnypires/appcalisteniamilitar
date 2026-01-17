@@ -27,5 +27,9 @@ export function useNavigateWithParams() {
         [router, searchParams]
     );
 
-    return { push, replace };
+    const back = useCallback(() => {
+        router.back();
+    }, [router]);
+
+    return { push, replace, back };
 }

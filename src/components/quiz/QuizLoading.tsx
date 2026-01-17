@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useNavigateWithParams } from "@/hooks/useNavigateWithParams";
 import { Check, FileText, Target, Clock } from "lucide-react";
 
 const steps = [
@@ -12,7 +12,7 @@ const steps = [
 ];
 
 export default function QuizLoading() {
-    const router = useRouter();
+    const router = useNavigateWithParams();
     const [currentStep, setCurrentStep] = useState(0);
     const [progress, setProgress] = useState(0);
 
@@ -95,16 +95,16 @@ export default function QuizLoading() {
                             <div
                                 key={step.id}
                                 className={`flex items-center gap-4 p-4 rounded border transition-all duration-300 ${isComplete || isActive
-                                        ? "border-primary/30 bg-primary/5"
-                                        : "border-white/10 bg-white/5"
+                                    ? "border-primary/30 bg-primary/5"
+                                    : "border-white/10 bg-white/5"
                                     }`}
                             >
                                 <div
                                     className={`w-10 h-10 rounded flex items-center justify-center border transition-all duration-300 ${isComplete
+                                        ? "border-primary/30 bg-primary/10 text-primary"
+                                        : isActive
                                             ? "border-primary/30 bg-primary/10 text-primary"
-                                            : isActive
-                                                ? "border-primary/30 bg-primary/10 text-primary"
-                                                : "border-white/20 bg-white/5 text-white/40"
+                                            : "border-white/20 bg-white/5 text-white/40"
                                         }`}
                                 >
                                     {isComplete ? (

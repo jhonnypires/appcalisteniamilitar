@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useNavigateWithParams } from "@/hooks/useNavigateWithParams";
 
 interface QuizFooterProps {
     currentStep: number;
@@ -9,7 +9,7 @@ interface QuizFooterProps {
 }
 
 export default function QuizFooter({ currentStep, totalSteps = 24, onBack }: QuizFooterProps) {
-    const router = useRouter();
+    const router = useNavigateWithParams();
 
     const handleBack = () => {
         if (onBack) {
