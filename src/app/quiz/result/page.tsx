@@ -1,5 +1,7 @@
 "use client";
 
+export const dynamic = "force-dynamic";
+
 import { useNavigateWithParams } from "@/hooks/useNavigateWithParams";
 
 export default function QuizResult() {
