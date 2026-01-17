@@ -4,8 +4,11 @@ import Link from "next/link";
 import { ArrowRight, Target, Zap, Shield, Users } from "lucide-react";
 import { useQuiz } from "@/context/QuizContext";
 
+import { useSearchParams } from "next/navigation";
+
 const Home = () => {
   const { startQuiz } = useQuiz();
+  const searchParams = useSearchParams();
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center p-4 relative overflow-hidden">
@@ -61,7 +64,7 @@ const Home = () => {
       {/* CTA Button */}
       <div className="w-full max-w-md mx-auto relative mb-10 z-10">
         <Link
-          href="/quiz/1"
+          href={`/quiz/1?${searchParams.toString()}`}
           onClick={() => startQuiz()}
           className="group relative w-full flex items-center justify-center gap-3 bg-[#1a4d1a] hover:bg-[#1a4d1a]/90 text-white text-lg md:text-xl font-black py-4 md:py-6 rounded-xl border-2 border-[#5c7a5c]/50 shadow-[0_0_20px_rgba(74,222,128,0.15)] transition-all hover:scale-[1.02] active:scale-[0.98]"
         >
