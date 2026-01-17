@@ -1,12 +1,13 @@
 "use client";
 
+import { Suspense } from "react";
 import Link from "next/link";
 import { ArrowRight, Target, Zap, Shield, Users } from "lucide-react";
 import { useQuiz } from "@/context/QuizContext";
 
 import { useSearchParams } from "next/navigation";
 
-const Home = () => {
+const HomeContent = () => {
   const { startQuiz } = useQuiz();
   const searchParams = useSearchParams();
 
@@ -102,6 +103,14 @@ const Home = () => {
         </div>
       </div>
     </main>
+  );
+};
+
+const Home = () => {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-[#0f110f]" />}>
+      <HomeContent />
+    </Suspense>
   );
 };
 
