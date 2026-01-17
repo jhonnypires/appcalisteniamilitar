@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useNavigateWithParams } from "@/hooks/useNavigateWithParams";
 import QuizFooter from "./QuizFooter";
 import { cn } from "@/lib/utils";
 import { Check } from "lucide-react";
 
 export default function QuizStep18() {
-    const router = useRouter();
+    const router = useNavigateWithParams();
     const [selected, setSelected] = useState<string[]>([]);
 
     const handleSelect = (id: string) => {

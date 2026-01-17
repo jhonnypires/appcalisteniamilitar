@@ -1,11 +1,11 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useNavigateWithParams } from "@/hooks/useNavigateWithParams";
 import Image from "next/image";
 import QuizFooter from "./QuizFooter";
 
 export default function QuizStep12() {
-    const router = useRouter();
+    const router = useNavigateWithParams();
 
     const handleSelect = (value: string) => {
         console.log("Selected Difficulty:", value);

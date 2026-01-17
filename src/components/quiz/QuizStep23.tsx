@@ -1,11 +1,11 @@
 "use client";
 
 import { useState, useRef, useCallback } from "react";
-import { useRouter } from "next/navigation";
+import { useNavigateWithParams } from "@/hooks/useNavigateWithParams";
 import QuizFooter from "./QuizFooter";
 
 export default function QuizStep23() {
-    const router = useRouter();
+    const router = useNavigateWithParams();
     const [weight, setWeight] = useState(70);
     const containerRef = useRef<HTMLDivElement>(null);
     const isDragging = useRef(false);

@@ -1,10 +1,12 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { useNavigateWithParams } from "@/hooks/useNavigateWithParams";
+import { Check } from "lucide-react";
 import QuizFooter from "./QuizFooter";
 
 export default function QuizStep4() {
-    const router = useRouter();
+    const router = useNavigateWithParams();
 
     const handleSelect = (value: string) => {
         console.log("Selected Body Goal:", value);

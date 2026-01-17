@@ -1,10 +1,10 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useNavigateWithParams } from "@/hooks/useNavigateWithParams";
 import QuizFooter from "./QuizFooter";
 
 export default function QuizStep20() {
-    const router = useRouter();
+    const router = useNavigateWithParams();
 
     const handleSelect = (value: string) => {
         console.log("Selected Alcohol Consumption:", value);

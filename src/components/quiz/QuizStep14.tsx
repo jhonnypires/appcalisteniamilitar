@@ -1,10 +1,10 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useNavigateWithParams } from "@/hooks/useNavigateWithParams";
 import Image from "next/image";
 
 export default function QuizStep14() {
-    const router = useRouter();
+    const router = useNavigateWithParams();
 
     const handleContinue = () => {
         // Navigate to next step or result page (Assuming result page or next step, let's go to /quiz/result for now or /quiz/15 if there is one. User usually asks for next.)

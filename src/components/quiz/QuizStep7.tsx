@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useNavigateWithParams } from "@/hooks/useNavigateWithParams";
 import { Check } from "lucide-react";
 import QuizFooter from "./QuizFooter";
 
 export default function QuizStep7() {
-    const router = useRouter();
+    const router = useNavigateWithParams();
     const [selected, setSelected] = useState<string[]>([]);
 
     const toggleSelection = (id: string) => {

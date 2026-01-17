@@ -2,9 +2,12 @@
 
 import { useState, useEffect, memo } from "react";
 
+import { useSearchParams } from "next/navigation";
+
 // Componente separado para o botão que não afeta o player de vídeo ao renderizar
 const DelayedCta = () => {
     const [isVisible, setIsVisible] = useState(false);
+    const searchParams = useSearchParams();
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -14,11 +17,13 @@ const DelayedCta = () => {
         return () => clearTimeout(timer);
     }, []);
 
+    const checkoutUrl = `https://pay.hotmart.com/D103907979Q?checkoutMode=10&${searchParams.toString()}`;
+
     return (
         <div className="mt-8 text-center px-4">
             {isVisible && (
                 <a
-                    href="https://pay.hotmart.com/D103907979Q?checkoutMode=10"
+                    href={checkoutUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block w-full max-w-md mx-auto bg-[#2F5233] hover:bg-[#3a633e] text-white py-4 px-6 rounded-xl font-black text-xl uppercase tracking-wider shadow-[0_0_20px_rgba(47,82,51,0.6)] animate-pulse transition-all transform hover:scale-105 border border-[#4a7c50]"

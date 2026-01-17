@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useNavigateWithParams } from "@/hooks/useNavigateWithParams";
 import Image from "next/image";
 import { Check } from "lucide-react";
 import QuizFooter from "./QuizFooter";
@@ -15,7 +15,7 @@ const FOCUS_AREAS = [
 ];
 
 export default function QuizStep11() {
-    const router = useRouter();
+    const router = useNavigateWithParams();
     const [selected, setSelected] = useState<string[]>([]);
 
     const handleToggle = (id: string) => {

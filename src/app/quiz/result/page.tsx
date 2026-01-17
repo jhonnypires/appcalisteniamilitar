@@ -1,9 +1,9 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useNavigateWithParams } from "@/hooks/useNavigateWithParams";
 
 export default function QuizResult() {
-    const router = useRouter();
+    const router = useNavigateWithParams();
 
     const handleAccessProtocol = () => {
         router.push("/quiz/video");
