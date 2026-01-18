@@ -28,19 +28,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <script src="https://t.contentsquare.net/uxa/93f173554d67f.js"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-  window.pixelId = "693f6628aa325057b1afa47b";
-  var a = document.createElement("script");
-  a.setAttribute("async", "");
-  a.setAttribute("defer", "");
-  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
-  document.head.appendChild(a);
-`,
-          }}
+        <Script
+          id="contentsquare"
+          src="https://t.contentsquare.net/uxa/93f173554d67f.js"
+          strategy="afterInteractive"
         />
+        <Script id="utmify-pixel" strategy="afterInteractive">
+          {`
+            window.pixelId = "693f6628aa325057b1afa47b";
+            var a = document.createElement("script");
+            a.setAttribute("async", "");
+            a.setAttribute("defer", "");
+            a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+            document.head.appendChild(a);
+          `}
+        </Script>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -48,12 +50,13 @@ export default function RootLayout({
         <QuizProvider>
           {children}
         </QuizProvider>
-        <script
+        <Script
+          id="utmify-utms"
           src="https://cdn.utmify.com.br/scripts/utms/latest.js"
           data-utmify-prevent-subids=""
-          async
-          defer
-        ></script>
+          data-utmify-inject-params="true"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );
